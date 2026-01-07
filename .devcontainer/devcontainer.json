@@ -1,23 +1,23 @@
 {
-    "initializeCommand": "docker system prune --all --force",
-    "customizations": {
-      "vscode": {
-        "extensions": [
-          "ms-python.vscode-pylance", 
-          "ms-python.python",
-          "esbenp.prettier-vscode",
-          "ms-azuretools.vscode-docker",
-          "ms-vscode.makefile-tools",
-          "ms-python.debugpy",
-          "mtxr.sqltools",
-          "ms-vsliveshare.vsliveshare",
-          "mtxr.sqltools-driver-pg",
-          "-github.copilot",
-          "-github.copilot-chat"
-        ]
-      }
-    },
-    "build": { "dockerfile": "Dockerfile" },
-    "postCreateCommand": "pip install hatch && hatch env create && make up",
-    "waitFor": "postCreateCommand"
-  }
+  "onCreateCommand": "docker system prune --all --force",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.vscode-pylance",
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.makefile-tools",
+        "ms-python.debugpy",
+        "mtxr.sqltools",
+        "ms-vsliveshare.vsliveshare",
+        "mtxr.sqltools-driver-pg",
+        "-github.copilot",
+        "-github.copilot-chat"
+      ]
+    }
+  },
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "pip install hatch && hatch env create && make up",
+  "waitFor": "postCreateCommand"
+}
